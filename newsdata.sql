@@ -19,8 +19,6 @@ CREATE VIEW top_authors AS
   ORDER BY views DESC
   LIMIT 4;
 
-AND errors.date >= 1
-
 CREATE VIEW request_errors AS
   WITH errors AS (
     SELECT time::date AS date, COUNT(*) AS status_errors
@@ -32,7 +30,7 @@ CREATE VIEW request_errors AS
     FROM log
     GROUP BY time::date
     )
-
-    SELECT errors.date AS error_date, round( (
+    SELECT errors.date, round( (
       (errors.status_errors*1.0) / total.status_totals) * 100, 1)
-    FROM errors, total WHERE errors.date = total.date AND error_date >= 1;
+    FROM errors, total WHERE errors.date = total.date AND round( (
+      (errors.status_errors*1.0) / total.status_totals) * 100, 1) > 1;
