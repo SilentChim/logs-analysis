@@ -22,6 +22,5 @@ Reporting tool that prints out reports (in plain text) based on the data in the 
     - Navigate to the logs_analysis folder inside the vagrant directory: type ‘cd logs_analysis’
     - Type ‘ls’ to list the files in the logs_analysis directory
 
-6. Once logs_analysis directory files are listed, select the script.sh file
-    - Type ‘bash script.sh’ to execute the test file.
-    - The bash script will setup, connect and query the database to provide project question answers
+6. Once logs_analysis directory files are listed, select the newsdata.py file
+    - Type ‘python newsdata.py’ to execute the test file.
