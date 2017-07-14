@@ -11,7 +11,6 @@ def topArticles():
     c = DB.cursor()
     c.execute("""SELECT * FROM top_articles;""")
     articles = c.fetchall()
-    DB.commit()
     DB.close()
     return articles
 
@@ -27,7 +26,6 @@ def topAuthors():
     c = DB.cursor()
     c.execute("""SELECT * FROM top_authors;""")
     authors = c.fetchall()
-    DB.commit()
     DB.close()
     return authors
 
@@ -43,7 +41,6 @@ def errorRequests():
     c = DB.cursor()
     c.execute("""SELECT * FROM request_errors;""")
     errors = c.fetchall()
-    DB.commit()
     DB.close()
     return errors
 
