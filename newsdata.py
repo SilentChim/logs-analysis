@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 import psycopg2
 
+
 def connect():
-  """Connect to the PostgreSQL database.  Returns a database connection."""
-  return psycopg2.connect("dbname=news")
+    """Connect to the PostgreSQL database.  Returns a database connection."""
+    return psycopg2.connect("dbname=news")
+
 
 def topArticles():
     """ Answers which are the top three articles of all time."""
@@ -20,6 +22,7 @@ for article in articles:
     print (article[0] + " - " + str(article[1])) + " views"
 print ("\n")
 
+
 def topAuthors():
     """ Answers who are the top four authors of all time."""
     DB = connect()
@@ -34,6 +37,7 @@ print ("The three most popular authors are:\n")
 for author in authors:
     print (str(author[0]) + " - " + str(author[1])) + " views"
 print ("\n")
+
 
 def errorRequests():
     """ Answers which days led to more than 1 percent of request errors."""
